@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Concept Interrogation</title>
+ <link rel="stylesheet" href="/static/style.css">
+ <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+</head>
+<body>
+ <div class="particles-container"></div>
+
+ <!-- Brutalist Navigation -->
+ <nav class="nav">
+ <div class="nav-inner">
+ <a href="/" class="nav-brand">academic archive</a>
+ <ul class="nav-links">
+ <li><a href="/">home</a></li>
+ <li><a href="/evidence1" class="active">evidence I</a></li>
+ <li><a href="/evidence2">evidence II</a></li>
+ <li><a href="/evidence3">evidence III</a></li>
+ </ul>
+ </div>
+ </nav>
+
+ <!-- Brutalist Hero -->
+ <section class="hero">
+ <div class="container">
+ <div style="font-size: 0.8rem; text-transform: uppercase; margin-bottom: var(--space-sm); color: var(--accent-ink);">██ EVIDENCE I</div>
+ <h1 class="hero-title">CONCEPT INTERROGATION</h1>
+ <p class="hero-subtitle">A framework for examining cognitive reframing events</p>
+ </div>
+ </section>
+
+ <!-- Evidence Grid -->
+ <main class="container">
+ <div class="grid-container">
+ <!-- ROW 1: Concept Definition -->
+ <div class="grid-item text-item fade-in">
+ <div class="section-tag">CORE CONCEPT</div>
+ <div class="section-question">[RECORD: What conceptual framework was engaged?]</div>
+ <p>
+ [DOCUMENTATION: Provide comprehensive definition of the concept under investigation. Include:
+ • Theoretical foundations
+ • Disciplinary context
+ • Your initial positionality
+ • Significance to academic development]
+ </p>
+ </div>
+
+ <div class="grid-item image-item fade-in">
+ <label class="img-placeholder">
+ <input type="file" accept="image/*">
+ <span class="material-symbols-outlined">image</span>
+ <span>EMPIRICAL EVIDENCE [CASE STUDY]</span>
+ </label>
+ </div>
+
+ <!-- ROW 2: Conceptual Origins -->
+ <div class="grid-item image-item fade-in" style="animation-delay: 0.2s;">
+ <label class="img-placeholder">
+ <input type="file" accept="image/*">
+ <span class="material-symbols-outlined">school</span>
+ <span>AFFORDANCE CONTEXT [LEARNING EVENT]</span>
+ </label>
+ </div>
+
+ <div class="grid-item text-item fade-in" style="animation-delay: 0.2s;">
+ <div class="section-tag">EPISTEMIC LINEAGE</div>
+ <div class="section-question">[RECORD: Through what pedagogical context was this concept introduced?]</div>
+ <p>
+ [DOCUMENTATION: Provide rigorous contextual analysis of:
+ • Textual source (title, author, theoretical tradition)
+ • Instructional methodology
+ • Classroom discourse patterns
+ • Your engagement level with the original material]
+ </p>
+ </div>
+
+ <!-- ROW 3: Learning Outcomes -->
+ <div class="grid-item text-item fade-in" style="animation-delay: 0.4s;">
+ <div class="section-tag">COGNITIVE RESIDUE</div>
+ <div class="section-question">[RECORD: What cognitive residue remained after engagement?]</div>
+ <p>
+ [DOCUMENTATION: Articulate new understandings through:
+ • Specific insights acquired
+ • Theoretical frameworks developed
+ • Connections made to prior knowledge
+ • Methodological tools gained]
+ </p>
+ </div>
+
+ <div class="grid-item image-item fade-in" style="animation-delay: 0.4s;">
+ <label class="img-placeholder">
+ <input type="file" accept="image/*">
+ <span class="material-symbols-outlined">insights</span>
+ <span>COGNITIVE TRACES [OUTCOME]</span>
+ </label>
+ </div>
+ </div>
+
+ <!-- REFLECTION SECTION -->
+ <section class="section fade-in" style="animation-delay: 0.6s;">
+ <div class="section-header">
+ <div class="section-tag" style="margin-bottom: 0;">REFLECTION</div>
+ <h2>Conceptual Reframing</h2>
+ </div>
+ <div class="brutalist-card" style="border: var(--border); padding: var(--space-lg);">
+ <div class="section-question" style="margin-bottom: var(--space-md);">[ANALYSIS: Did engagement with this concept produce measurable shifts in thinking?]</div>
+ <p>
+ [DOCUMENTATION: Conduct epistemological post-audit:
+ • Before/after cognitive mappings
+ • Evidence of conceptual restructuring
+ • Implications for disciplinary understanding
+ • Ongoing utility within academic framework]
+ <!-- Brutalist divider -->
+ <div style="height: 1px; background: var(--grid-lines); margin: var(--space-md) 0;"></div>
+ <p style="font-style: italic; color: var(--faint-ink);">
+ "Conceptual breakthroughs represent not merely changes in what we know, but fundamental reorganizations of how we know it."
+ </p>
+ </div>
+ </section>
+
+ <!-- Navigation -->
+ <div style="display: flex; justify-content: space-between; margin: var(--space-xl) 0;">
+ <a href="/" class="btn brutalist-btn">← RETURN</a>
+ <a href="/evidence2" class="btn brutalist-btn">PROCEED →</a>
+ </div>
+ </main>
+
+ <!-- Brutalist Footer -->
+ <footer class="footer">
+ <p>EVIDENCE I • Concept Interrogation Framework • Version 1.2</p>
+ </footer>
+
+ <script src="/static/main.js"></script>
+ <script>
+ // Initialize evidence-specific interactions
+ document.addEventListener('DOMContentLoaded', function() {
+ // Add brutalist page load animation
+ document.querySelectorAll('.fade-in').forEach((el, i) => {
+ el.style.animationDelay = `${i * 0.1}s`;
+ });
+ });
+ </script>
+</body>
+</html>

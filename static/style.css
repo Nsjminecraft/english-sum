@@ -1,0 +1,389 @@
+/* ============================================
+ACADEMIC BRUTALISM DESIGN SYSTEM
+============================================ */
+
+:root {
+ /* Brutalist Typography - Raw, Intellectual, Honest */
+ --font-heading: 'Courier New', monospace;
+ --font-body: 'Courier New', monospace;
+ --font-code: 'Courier New', monospace;
+
+ /* Brutalist Color System - Paper & Ink */
+ --paper: #f5f0e8; /* Warm off-white paper */
+ --ink: #1a1a1a; /* Deep black ink */
+ --accent-ink: #c44536; /* Academic red ink */
+ --faint-ink: #4a4a4a; /* Aged ink */
+ --grid-lines: #e0d8c8; /* Subtle grid lines */
+ --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+ /* Brutalist Spacing - Notebook Grid */
+ --space-xs: 0.5rem; /* 8px */
+ --space-sm: 1rem; /* 16px */
+ --space-md: 1.5rem; /* 24px */
+ --space-lg: 2rem; /* 32px */
+ --space-xl: 3rem; /* 48px */
+ --space-2xl: 4rem; /* 64px */
+
+ /* Brutalist Borders - Honest, Visible Construction */
+ --border-thin: 1px solid var(--grid-lines);
+ --border: 2px solid var(--ink);
+ --border-accent: 2px solid var(--accent-ink);
+
+ /* Brutalist Transitions - Mechanical Precision */
+ --duration-fast: 0.1s;
+ --duration-base: 0.2s;
+ --duration-slow: 0.3s;
+ --ease-linear: linear;
+ --ease-sharp: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+BASE STYLES - Academic Aesthetic Foundations
+============================================ */
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: var(--font-body);
+}
+
+html {
+ background-color: var(--paper);
+ color: var(--ink);
+ line-height: 1.6;
+ font-size: 16px;
+}
+
+body {
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+}
+
+/* Typography - Brutalist Academic */
+body, input, button, textarea, select {
+ font-family: var(--font-body);
+ color: var(--ink);
+}
+
+h1, h2, h3, h4, h5, h6 {
+ font-weight: 900;
+ font-family: var(--font-heading);
+ line-height: 1.2;
+ letter-spacing: -0.02em;
+ margin-bottom: var(--space-sm);
+}
+
+h1 { font-size: 2.5rem; text-transform: uppercase; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+ margin-bottom: var(--space-sm);
+ line-height: 1.7;
+}
+
+/* Brutalist Layout Grid */
+.container {
+ width: 100%;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 var(--space-lg);
+}
+
+.section {
+ padding: var(--space-xl) 0;
+}
+
+/* ============================================
+NOTEPAPER GRID SYSTEM - Brutalist Evidence Layout
+============================================ */
+.grid-container {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: var(--space-lg);
+ margin: var(--space-xl) 0;
+}
+
+@media (max-width: 768px) {
+ .grid-container {
+ grid-template-columns: 1fr;
+ }
+}
+
+/* Individual Evidence Cards */
+.grid-item {
+ position: relative;
+ background: var(--paper);
+ border: var(--border);
+ border-radius: 0;
+ padding: var(--space-lg);
+ transition: all var(--duration-base) var(--ease-sharp);
+ overflow: hidden;
+ box-shadow: var(--shadow);
+}
+
+/* Brutalist Checkerboard Indicator */
+.grid-item:nth-child(odd) {
+ border-top: var(--border-accent);
+}
+
+.grid-item:nth-child(even) {
+ border-left: var(--border-accent);
+}
+
+/* Image Cards - Brutalist Polaroid Style */
+.grid-item.image-item {
+ padding: 0;
+ min-height: 350px;
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ overflow: hidden;
+ border: 2px dashed var(--accent-ink);
+ background: #f0ebe5;
+}
+
+/* Text Cards - Academic Notebook Style */
+.grid-item.text-item {
+ border: var(--border);
+ background: var(--paper);
+}
+
+/* Section metadata */
+.section-tag {
+ font-size: 0.75rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ color: var(--accent-ink);
+ margin-bottom: var(--space-xs);
+ display: flex;
+ align-items: center;
+ gap: var(--space-xs);
+}
+
+.section-tag::before {
+ content: '██';
+ color: var(--accent-ink);
+ font-size: 0.6rem;
+}
+
+.section-question {
+ font-family: var(--font-heading);
+ font-size: 0.95rem;
+ color: var(--ink);
+ font-style: italic;
+ margin-bottom: var(--space-sm);
+}
+
+/* ============================================
+BRUTALIST IMAGE PLACEHOLDERS
+============================================ */
+.img-placeholder {
+ position: relative;
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ gap: var(--space-sm);
+ color: var(--faint-ink);
+ cursor: pointer;
+ transition: all var(--duration-base) var(--ease-linear);
+ border-bottom: var(--border-thin);
+}
+
+.img-placeholder:hover {
+ background-color: rgba(196, 69, 54, 0.05);
+}
+
+.img-placeholder .material-symbols-outlined {
+ font-size: 2rem;
+ opacity: 0.6;
+ transition: all var(--duration-base) var(--ease-linear);
+}
+
+.img-placeholder:hover .material-symbols-outlined {
+ opacity: 0.9;
+ color: var(--accent-ink);
+}
+
+.img-placeholder input[type="file"] {
+ position: absolute;
+ inset: 0;
+ opacity: 0;
+ cursor: pointer;
+}
+
+.img-placeholder img {
+ position: absolute;
+ inset: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+
+/* ============================================
+BRUTALIST PARTICLE SYSTEM
+============================================ */
+.particles-container {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: -1;
+ pointer-events: none;
+ overflow: hidden;
+ background-image:
+ linear-gradient(rgba(196, 69, 54, 0.03) 1px, transparent 1px),
+ linear-gradient(90deg, rgba(196, 69, 54, 0.03) 1px, transparent 1px);
+ background-size: 40px 40px;
+ opacity: 0.5;
+}
+
+/* ============================================
+BRUTALIST INTERACTIVE EFFECTS
+============================================ */
+.grid-item:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Academic Brutalist Navigation */
+.nav {
+ border-bottom: var(--border);
+ background: var(--paper);
+ position: sticky;
+ top: 0;
+ z-index: 10;
+}
+
+.nav-inner {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: var(--space-sm) var(--space-lg);
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.nav-brand {
+ font-family: var(--font-heading);
+ font-size: 1.25rem;
+ font-weight: 900;
+ text-decoration: none;
+ color: var(--ink);
+ padding: var(--space-xs) 0;
+}
+
+.nav-links {
+ display: flex;
+ gap: var(--space-md);
+ list-style: none;
+}
+
+.nav-links a {
+ text-decoration: none;
+ color: var(--ink);
+ font-weight: 600;
+ padding: var(--space-xs) var(--space-sm);
+ transition: all var(--duration-base) var(--ease-linear);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+ color: var(--accent-ink);
+ border-bottom: 2px solid var(--accent-ink);
+}
+
+/* ============================================
+BRUTALIST HERO & FOOTER
+============================================ */
+.hero {
+ min-height: 60vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ padding: var(--space-2xl) 0;
+ border-bottom: var(--border-thin);
+ background-size: 30px 30px;
+ background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+.hero-title {
+ font-size: 3.5rem;
+ text-transform: uppercase;
+ letter-spacing: -0.03em;
+ margin-bottom: var(--space-sm);
+ color: var(--ink);
+}
+
+.hero-subtitle {
+ font-size: 1.25rem;
+ color: var(--faint-ink);
+ max-width: 600px;
+ margin: 0 auto;
+}
+
+.footer {
+ text-align: center;
+ padding: var(--space-xl);
+ border-top: var(--border-thin);
+ background: var(--paper);
+ margin-top: auto;
+}
+
+/* ============================================
+BRUTALIST ANIMATIONS
+============================================ */
+.fade-in {
+ animation: fadeIn 0.6s var(--ease-sharp) forwards;
+ opacity: 0;
+}
+
+.fade-in-delay-1 { animation-delay: 0.2s; opacity: 0; }
+.fade-in-delay-2 { animation-delay: 0.4s; opacity: 0; }
+.fade-in-delay-3 { animation-delay: 0.6s; opacity: 0; }
+.fade-in-delay-4 { animation-delay: 0.8s; opacity: 0; }
+.fade-in-delay-5 { animation-delay: 1s; opacity: 0; }
+
+@keyframes fadeIn {
+ from { opacity: 0; transform: translateY(10px); }
+ to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cursor dot style */
+.cursor-dot {
+ position: fixed;
+ width: 12px;
+ height: 12px;
+ background-color: var(--accent-ink);
+ border-radius: 50%;
+ pointer-events: none;
+ z-index: 9999;
+ transform: translate(-50%, -50%);
+}
+
+/* Brutalist glow effect for active elements */
+.highlight-glow {
+ position: relative;
+}
+
+.highlight-glow::after {
+ content: '';
+ position: absolute;
+ inset: 0;
+ border: 2px solid var(--accent-ink);
+ border-radius: 0;
+ animation: glowPulse 1.5s var(--ease-sharp) infinite;
+ pointer-events: none;
+}
+
+@keyframes glowPulse {
+ 0%, 100% { opacity: 1; transform: scale(1); }
+ 50% { opacity: 0.5; transform: scale(1.05); }
+}

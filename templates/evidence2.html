@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Skill Demonstration</title>
+ <link rel="stylesheet" href="/static/style.css">
+ <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+</head>
+<body>
+ <div class="particles-container"></div>
+
+ <!-- Brutalist Navigation -->
+ <nav class="nav">
+ <div class="nav-inner">
+ <a href="/" class="nav-brand">academic archive</a>
+ <ul class="nav-links">
+ <li><a href="/">home</a></li>
+ <li><a href="/evidence1">evidence I</a></li>
+ <li><a href="/evidence2" class="active">evidence II</a></li>
+ <li><a href="/evidence3">evidence III</a></li>
+ </ul>
+ </div>
+ </nav>
+
+ <!-- Brutalist Hero -->
+ <section class="hero">
+ <div class="container">
+ <div style="font-size: 0.8rem; text-transform: uppercase; margin-bottom: var(--space-sm); color: var(--accent-ink);">██ EVIDENCE II</div>
+ <h1 class="hero-title">SKILL DEMONSTRATION</h1>
+ <p class="hero-subtitle">Taxonomy of acquired competencies through project documentation</p>
+ </div>
+ </section>
+
+ <!-- Evidence Grid -->
+ <main class="container">
+ <!-- WORK SAMPLE -->
+ <div class="grid-container">
+ <div class="grid-item text-item fade-in">
+ <div class="section-tag">ARTIFACT</div>
+ <div class="section-question">[RECORD: What substantive work was produced?]</div>
+ <p>
+ [DOCUMENTATION: Provide comprehensive artifact analysis:
+ • Title and creation timeline
+ • Development methodology
+ • Tools and technologies employed
+ • Theoretical foundations embedded in the work]
+ </p>
+ </div>
+
+ <div class="grid-item image-item fade-in">
+ <label class="img-placeholder">
+ <input type="file" accept="image/*">
+ <span class="material-symbols-outlined">work</span>
+ <span>WORK SAMPLE [ARTIFACT]</span>
+ </label>
+ </div>
+ </div>
+
+ <div style="height: 1px; background: var(--grid-lines); margin: var(--space-xl) 0;"></div>
+
+ <!-- SKILL DEMONSTRATION GRID -->
+ <div class="grid-container">
+ <!-- SKILL 1 -->
+ <div class="grid-item text-item fade-in" style="animation-delay: 0.2s;">
+ <div class="section-tag">COMPETENCY 1</div>
+ <div class="section-question">[RECORD: What systematic capability was demonstrated?]</div>
+ <p>
+ [DOCUMENTATION: Conduct skills assessment framework:
+ • Definition of skill employed
+ • Concrete examples from project work
+ • Evidence of competency level
+ • Transferability to other contexts]
+ </p>
+ </div>
+
+ <div class="grid-item image-item fade-in" style="animation-delay: 0.2s;">
+ <label class="img-placeholder">
+ <input type="file" accept="image/*">
+ <span class="material-symbols-outlined">psychology</span>
+ <span>APPLIED COMPETENCY [DOCUMENTATION]</span>
+ </label>
+ </div>
+
+ <!-- SKILL 2 -->
+ <div class="grid-item image-item fade-in" style="animation-delay: 0.4s;">
+ <label class="img-placeholder">
+ <input type="file" accept="image/*">
+ <span class="material-symbols-outlined">group_work</span>
+ <span>COLLABORATIVE PROTOCOLS [ILLUSTRATION]</span>
+ </label>
+ </div>
+
+ <div class="grid-item text-item fade-in" style="animation-delay: 0.4s;">
+ <div class="section-tag">COMPETENCY 2</div>
+ <div class="section-question">[RECORD: What secondary capability was demonstrated?]</div>
+ <p>
+ [DOCUMENTATION: Identical framework to Competency 1:
+ • Function-specific examples
+ • Domain applicability
+ • Execution quality in projects]
+ </p>
+ </div>
+ </div>
+
+ <div style="height: 1px; background: var(--grid-lines); margin: var(--space-xl) 0;"></div>
+
+ <!-- SKILL TRANSFER -->
+ <section class="grid-container fade-in" style="animation-delay: 0.6s;">
+ <div class="grid-item text-item">
+ <div class="section-tag">ECOLOGICAL VALIDITY</div>
+ <div class="section-question">[RECORD: Does this competency demonstrate real-world applicability?]</div>
+ <p>
+ [DOCUMENTATION: Contextual transfer analysis:
+ • Real-world context of skill usage
+ • Comparative examples from external environments
+ • Evidence of successful application transfer
+ • Disciplinary relevance beyond classroom scope]
+ </p>
+ </div>
+
+ <div class="grid-item image-item">
+ <label class="img-placeholder">
+ <input type="file" accept="image/*">
+ <span class="material-symbols-outlined">language</span>
+ <span>ECOLOGICAL ILLUSTRATION [TRANSFER EVIDENCE]</span>
+ </label>
+ </div>
+ </section>
+
+ <!-- SKILL IMPROVEMENT -->
+ <section class="section fade-in" style="animation-delay: 0.8s;">
+ <div class="section-header">
+ <div class="section-tag" style="margin-bottom: 0;">LEARNING AGENDA</div>
+ <h2>Competency Development</h2>
+ </div>
+ <div class="brutalist-card" style="border: var(--border); padding: var(--space-lg);">
+ <div class="section-question" style="margin-bottom: var(--space-md);">[RECORD: What capacities require further development?]</div>
+ <p>
+ [DOCUMENTATION: Establish professional development framework:
+ • Specific competency targeted for improvement
+ • Rationale for development focus
+ • Actionable development plan
+ • Success metric specification]
+ </p>
+ <!-- Brutalist divider -->
+ <div style="height: 1px; background: var(--grid-lines); margin: var(--space-md) 0;"></div>
+ <p style="font-style: italic; color: var(--faint-ink);">
+ "Skills demonstrate not just what we can do, but reveal the boundaries of our current agency and capacities."
+ </p>
+ </div>
+ </section>
+
+ <!-- Navigation -->
+ <div style="display: flex; justify-content: space-between; margin: var(--space-xl) 0;">
+ <a href="/evidence1" class="btn brutalist-btn">← PREVIOUS</a>
+ <a href="/evidence3" class="btn brutalist-btn">PROCEED →</a>
+ </div>
+ </main>
+
+ <!-- Brutalist Footer -->
+ <footer class="footer">
+ <p>EVIDENCE II • Skills Taxonomy • Version 1.2</p>
+ </footer>
+
+ <script src="/static/main.js"></script>
+ <script>
+ // Initialize evidence-specific animations
+ document.addEventListener('DOMContentLoaded', function() {
+ document.querySelectorAll('.fade-in').forEach((el, i) => {
+ el.style.animationDelay = `${i * 0.1}s`;
+ });
+ });
+ </script>
+</body>
+</html>
