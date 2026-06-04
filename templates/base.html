@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Academic Portfolio{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-ring"></div>
+
+  <!-- Particle Background -->
+  <canvas id="particle-canvas" class="particle-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="floating-nav" id="navbar">
+    <div class="nav-glass">
+      <a href="/" class="nav-brand">Academic Archive</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/" class="nav-link{% if request.path == '/' %} active{% endif %}">Home</a></li>
+        <li><a href="/evidence1" class="nav-link{% if request.path == '/evidence1' %} active{% endif %}">Evidence I</a></li>
+        <li><a href="/evidence2" class="nav-link{% if request.path == '/evidence2' %} active{% endif %}">Evidence II</a></li>
+        <li><a href="/evidence3" class="nav-link{% if request.path == '/evidence3' %} active{% endif %}">Evidence III</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-overlay-bg"></div>
+    <ul class="menu-overlay-links">
+      <li><a href="/" class="overlay-link{% if request.path == '/' %} active{% endif %}">Home</a></li>
+      <li><a href="/evidence1" class="overlay-link{% if request.path == '/evidence1' %} active{% endif %}">Evidence I</a></li>
+      <li><a href="/evidence2" class="overlay-link{% if request.path == '/evidence2' %} active{% endif %}">Evidence II</a></li>
+      <li><a href="/evidence3" class="overlay-link{% if request.path == '/evidence3' %} active{% endif %}">Evidence III</a></li>
+    </ul>
+  </div>
+
+  {% block content %}{% endblock %}
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">Academic Archive</div>
+      <p class="footer-text">{% block footer_text %}Documentation of Learning Journey — Version 2.0{% endblock %}</p>
+      <div class="footer-line"></div>
+    </div>
+  </footer>
+
+  <script src="/static/main.js"></script>
+</body>
+</html>

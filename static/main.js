@@ -1,67 +1,48 @@
+// Academic Brutalism — Portfolio Interactivity
+// ENL1W Grade 9 Academic Portfolio
+
+document.addEventListener('DOMContentLoaded', () => {
+  initMobileMenu();
+  initScrollReveal();
+});
+
 // ============================================
-// ACADEMIC BRUTALIST INTERACTIVITY
+// MOBILE MENU
 // ============================================
+function initMobileMenu() {
+  const menuToggle = document.getElementById('menuToggle');
+  const menuOverlay = document.getElementById('menuOverlay');
 
-(function() {
- 'use strict';
+  if (menuToggle && menuOverlay) {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      menuOverlay.style.display = menuOverlay.style.display === 'flex'
+                       ? 'none' : 'flex';
+    });
 
- // Brutalist cursor dot effect
- const cursorDot = document.createElement('div');
- cursorDot.className = 'cursor-dot';
- document.body.appendChild(cursorDot);
+    menuOverlay.querySelectorAll('.overlay-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menuOverlay.style.display = 'none';
+        menuToggle.classList.remove('active');
+      });
+    });
+  }
+}
 
- document.addEventListener('mousemove', (e) => {
- cursorDot.style.left = e.clientX + 'px';
- cursorDot.style.top = e.clientY + 'px';
- });
+// ============================================
+// SCROLL REVEAL
+// ============================================
+function initScrollReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
 
- // Brutalist grid item interactions
- document.addEventListener('DOMContentLoaded', function() {
- const gridItems = document.querySelectorAll('.grid-item');
-
- // Academic clicking effect
- gridItems.forEach(item => {
- item.addEventListener('click', function() {
- // Brutalist highlight on click
- const existingHighlight = this.querySelector('.brutalist-highlight');
- if (existingHighlight) existingHighlight.remove();
-
- const highlight = document.createElement('div');
- highlight.className = 'brutalist-highlight';
- highlight.style.position = 'absolute';
- highlight.style.inset = '0';
- highlight.style.background = 'rgba(196, 69, 54, 0.05)';
- highlight.style.pointerEvents = 'none';
- highlight.style.animation = 'highlightFade 0.6s ease-out';
- this.appendChild(highlight);
-
- setTimeout(() => highlight.remove(), 600);
- });
- });
-
- // Brutalist image upload handlers
- document.querySelectorAll('.img-placeholder input[type="file"]').forEach(input => {
- input.addEventListener('change', function(e) {
- const file = e.target.files[0];
- if (file) {
- const reader = new FileReader();
- reader.onload = function(ev) {
- const placeholder = input.closest('.img-placeholder');
- let img = placeholder.querySelector('img');
-
- if (!img) {
- img = document.createElement('img');
- placeholder.appendChild(img);
- }
-
- img.src = ev.target.result;
-
- // Add brutalist Polaroid border
- placeholder.style.backgroundColor = '#ffffff';
- placeholder.style.border = '2px dashed #4a4a4a';
- };
- reader.readAsDataURL(file);
- }
- });
- });
-})();
+  document.querySelectorAll('.reveal').forEach(el => {
+    observer.observe(el);
+  });
+}
